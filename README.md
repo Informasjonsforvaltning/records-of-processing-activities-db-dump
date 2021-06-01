@@ -1,10 +1,6 @@
 # records-of-processing-activities-etl
 
-## Extract
-```
-% db.organisations.find()  # db_organisations.json
-% db.records.find()  # db_records.json
-```
+Project to extract and run statistics on content of records of processing activities
 
 ## Install and run extract
 ```
