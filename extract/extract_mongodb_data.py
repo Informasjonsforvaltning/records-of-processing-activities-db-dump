@@ -30,7 +30,7 @@ client = MongoClient(
     authMechanism="SCRAM-SHA-1",
 )
 
-db = client["records-of-processing-activities"]
+db = client[MONGO_DB]
 
 organisations = list(db.organizations.find())
 with open(
