@@ -1,6 +1,6 @@
-# records-of-processing-activities-etl
+# records-of-processing-activities-db-dump
 
-Project to extract and run statistics on content of records of processing activities
+Project to extract relevant db content and run statistics on content of records of processing activities
 
 ## Install and run extract
 ```
