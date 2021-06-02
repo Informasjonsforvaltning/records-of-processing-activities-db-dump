@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "records-of-processing-activities-etl"
+name = "records-of-processing-activities-notebooks"
 version = "0.1.0"
-description = "Simple ETL and notebook project to analyse data."
+description = "Notebooks project to analyse data."
 authors = ["Stig B. Dørmænen <stigbd@gmail.com>"]
 license = "Apache-2.0"
 
@@ -12,9 +12,6 @@ jupyter = "^1.0.0"
 ipykernel = "^5.5.5"
 
 [tool.poetry.dev-dependencies]
-black = "^21.5b2"
-flake8 = "^3.9.2"
-flake8-black = "^0.2.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

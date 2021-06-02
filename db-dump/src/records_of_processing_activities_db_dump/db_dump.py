@@ -1,17 +1,10 @@
+"""Module for dumping data from db for statistical purposes."""
 import json
 import os
+
 from dotenv import load_dotenv
 from pymongo import MongoClient
-import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    "-o",
-    "--outputdirectory",
-    help="the path to the directory of the output files",
-    required=True,
-)
-args = parser.parse_args()
 
 # load environment variables:
 load_dotenv()
@@ -20,6 +13,7 @@ MONGO_PORT = os.getenv("MONGO_PORT")
 MONGO_USERNAME = os.getenv("MONGO_USERNAME")
 MONGO_PASSWORD = os.getenv("MONGO_PASSWORD")
 MONGO_DB = os.getenv("MONGO_DB")
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", "./")
 
 client = MongoClient(
     host=MONGO_HOST,
@@ -32,9 +26,7 @@ client = MongoClient(
 
 db = client[MONGO_DB]
 
-organisations = list(db.organizations.find())
-with open(
-    args.outputdirectory + "organisations.json", "w", encoding="utf-8"
-) as outfile:
-    for organisation in organisations:
-        json.dump(organisation, outfile, ensure_ascii=False, indent=4)
+organizations = list(db.organizations.find())
+with open(OUTPUT_DIR + "organizations.json", "w", encoding="utf-8") as outfile:
+    for organization in organizations:
+        json.dump(organization, outfile, ensure_ascii=False, indent=4)
