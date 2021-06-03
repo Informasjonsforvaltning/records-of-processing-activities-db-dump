@@ -132,4 +132,4 @@ dmypy.json
 .pytype
 
 # Files
-/files
+/notebooks/files
